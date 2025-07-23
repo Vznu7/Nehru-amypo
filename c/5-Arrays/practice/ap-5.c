@@ -1,47 +1,52 @@
-//Note : 2 test cases are failed code
-//if anyone have the code with all successful test case send the pull request with that code
-
-
 #include <stdio.h>
 #include <string.h>
 int main()
 {
-    int a;
-    if(scanf("%d",&a)!=1||a<0||a>100)
+    int n , found =0;
+    char fruits[100][20],search[20];
+    if(scanf("%d",&n)!=1,n<1||n>100)
     {
-        printf("Invalid input");
+        printf("Invalid number of fruits!");
         return 0;
     }
     
-    
-    char fruits[a][20];
-    for(int i =0;i<a;i++)
+    for(int i =0;i<n;i++)
     {
-    scanf("%s ",fruits[i]);
+        if(scanf("%19s",fruits[i])!=1)
+        {
+            printf("Invalid Input");
+            return 0;
+            
+        }
     }
     
+    if(scanf("%19s",search)!=1)
+    {
+        printf("Invalid Input");
+        return 0;
+        
+    }
     
-    char search[20];
-    scanf("%s",search);
-    
-    
-    int found =0;
-    for(int i =0;i<a;i++)
+    for(int i=0;i<n;i++)
     {
         if(strcmp(fruits[i],search)==0)
         {
-            found=1;
+            found =1;
             break;
         }
     }
-    if(found==1)
+    if(found)
     {
-        for(int i =0;i<a;i++)
+        for(int i =0;i<n;i++)
         {
-            printf("%s ",fruits[i]);
+            printf("%s",fruits[i]);
+            if(i<n-1)printf(" ");
         }
+        printf("\n");
     }
     else{
         printf("Fruit not found!");
     }
+    return 0;
+    
 }
