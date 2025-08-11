@@ -3,14 +3,14 @@ public class A{
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        if(a<0||a>120)
+        String a = sc.nextLine();
+        
+        if(!a.matches("[0-9]+"))
         {
-            System.out.println("Invalid input");
+            System.out.println("false");
         }
         else{
-            int days = a*365;
-            System.out.println(days);
+            System.out.println("true");
         }
     }
 }

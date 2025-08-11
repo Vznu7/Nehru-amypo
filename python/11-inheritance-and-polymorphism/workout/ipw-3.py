@@ -12,7 +12,7 @@ class SavingsAccount(Account):
 
 class CurrentAccount(Account):
     def balance0(self):
-        # No interest for current accounts
+        # No interest for current accounrts
         return self.balance
 
 # Read inputs

@@ -4,9 +4,11 @@ public class A{
     {
         Scanner sc = new Scanner(System.in);
         int a =sc.nextInt();
-        if(a>=18)
-            System.out.println("Eligible to vote");
+        if(a>=16)
+        {
+            System.out.println("Eligible");
+        }
         else
-            System.out.println("Not eligible to vote");
+            System.out.println("Not eligible");
     }
 }
